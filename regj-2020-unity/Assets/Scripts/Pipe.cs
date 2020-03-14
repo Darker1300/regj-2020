@@ -25,6 +25,7 @@ public class Pipe : MonoBehaviour
     private Mesh mesh;
     private Vector3[] vertices;
     private int[] triangles;
+    private Vector2[] uv;
 
     [SerializeField]
     private bool drawGizmo = false;
@@ -56,6 +57,7 @@ public class Pipe : MonoBehaviour
     public void BuildMesh()
     {
         SetVertices();
+        SetUV();
         SetTriangles();
         mesh.RecalculateNormals();
     }
@@ -141,6 +143,19 @@ public class Pipe : MonoBehaviour
         p.y = r * Mathf.Cos(u);
         p.z = pipeRadius * Mathf.Sin(v);
         return p;
+    }
+
+    private void SetUV()
+    {
+        uv = new Vector2[vertices.Length];
+        for (int i = 0; i < vertices.Length; i += 4)
+        {
+            uv[i] = Vector2.zero;
+            uv[i + 1] = Vector2.right;
+            uv[i + 2] = Vector2.up;
+            uv[i + 3] = Vector2.one;
+        }
+        mesh.uv = uv;
     }
 
     #endregion Mesh Generation
