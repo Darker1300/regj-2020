@@ -819,8 +819,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 5965259056727151324, guid: 2c8862ad00a288546bf9808981f98eb1,
-        type: 3}
+      objectReference: {fileID: 2100000, guid: b1a3800c3a4f07c4c9216fd4e7223b95, type: 2}
     - target: {fileID: 4096800655336611647, guid: 435b3bd74814a3748a4a27b2ab4a83cb,
         type: 3}
       propertyPath: m_Name
@@ -990,7 +989,7 @@ PrefabInstance:
     - target: {fileID: 4901631192584090792, guid: 6c77295d486c39347a77f70aad4a7e52,
         type: 3}
       propertyPath: pipeCount
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4901631192584090792, guid: 6c77295d486c39347a77f70aad4a7e52,
         type: 3}

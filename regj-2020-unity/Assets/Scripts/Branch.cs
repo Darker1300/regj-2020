@@ -12,6 +12,9 @@ public class Branch : MonoBehaviour
     [SerializeField]
     private bool doBuildPipes = false;
 
+    [SerializeField]
+    private bool doClearPipes = false;
+
     private void Awake()
     {
         BuildPipes();
@@ -21,7 +24,8 @@ public class Branch : MonoBehaviour
     {
         foreach (Pipe pipe in pipes)
         {
-            GameObject.Destroy(pipe.gameObject);
+            if (pipe)
+                GameObject.Destroy(pipe.gameObject);
         }
         pipes = null;
     }
@@ -48,6 +52,11 @@ public class Branch : MonoBehaviour
         {
             doBuildPipes = false;
             BuildPipes();
+        }
+        if (doClearPipes)
+        {
+            doClearPipes = false;
+            ClearPipes();
         }
     }
 }

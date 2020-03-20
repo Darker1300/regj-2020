@@ -64,7 +64,7 @@ public class Pipe : MonoBehaviour
 
     public void AlignWith(Pipe pipe)
     {
-        float relativeRotation = Random.Range(0f, 360f);
+        float relativeRotation = Random.Range(0, curveSegmentCount) * 360f / pipeSegmentCount;
 
         transform.SetParent(pipe.transform, false);
         transform.localPosition = Vector3.zero;
